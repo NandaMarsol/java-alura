@@ -35,3 +35,7 @@ public class Funcionario {
 	}
 
 }
+
+//private - apenas visível dentro da classe
+//protected - visível dentro da classe e também para as filhas
+//public - visível em todo lugar

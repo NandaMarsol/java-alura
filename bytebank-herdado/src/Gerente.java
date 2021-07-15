@@ -14,6 +14,11 @@ public class Gerente extends Funcionario {
 	        return false;
 	    }
 	}
+	
+	// o gerente tem a bonificação de um funcionário comum + um salário
+	public double getBonificacao() {
+	    return super.getBonificacao() + super.getSalario(); // reescrita de método
+	}
 
 
 
