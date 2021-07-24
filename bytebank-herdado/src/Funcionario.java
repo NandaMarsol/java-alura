@@ -1,14 +1,13 @@
-
-public class Funcionario {
+// não pode instanciar um "funcionário" dessa classe, pq é uma classe abstrata
+public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
 	private double salario;
 	
-	// bonificação padrão de 10% do salário
-	public double getBonificacao() {
-        return this.salario * 0.1;
-    }
+	//método sem corpo, não há implementação
+	public abstract double getBonificacao();
+
 	
 	public String getNome() {
 		return nome;
@@ -39,3 +38,9 @@ public class Funcionario {
 //private - apenas visível dentro da classe
 //protected - visível dentro da classe e também para as filhas
 //public - visível em todo lugar
+
+/* Classes abstratas: não podem ser instanciadas, para instanciar devemos criar
+ * primeiro uma classe filha não abstrata. Uma classe abstrata representa um 
+ * conceito, algo abstrato e o compilador não permite instanciar um objeto
+ * dessa classe.  
+ */

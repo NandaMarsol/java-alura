@@ -2,7 +2,7 @@
 public class TestaFuncionario {
 
 	public static void main(String[] args) {
-		Funcionario luck = new Funcionario();
+		Funcionario luck = new Gerente();
 		luck.setNome("Luck Bird");
 		luck.setCpf("123456789-10");
 		luck.setSalario(5200.00);
