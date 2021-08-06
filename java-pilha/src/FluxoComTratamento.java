@@ -1,6 +1,6 @@
-// Classe para demonstrar o tratamento de exceções nos métodos com o bloco try-catch
+// Classe para demonstrar o lançamento de exceções no método2() e atribuir uma mensagem à ela; 
 
-public class Fluxo {
+public class FluxoComTratamento {
 
     public static void main(String[] args) {
         System.out.println("Ini do main");
@@ -23,17 +23,10 @@ public class Fluxo {
 
     private static void metodo2() {
         System.out.println("Ini do metodo2");
-        for(int i = 1; i <= 5; i++) {
-            System.out.println(i);
-            Conta c = null;
-            c.deposita(); // testando a classe Conta
- //           try { // tratamento da exceção para evitar que caia na pilha de execução 
- //           	int a = i / 0; // forçando uma exceção ArithmeticException
- //           } catch (ArithmeticException ex) {
- //           	System.out.println("Exceção ArithmeticException");
- //           }
-            
-        }
-        System.out.println("Fim do metodo2");        
+        //Exemplo sem guardar a exceção em uma referência, pode lançá-la diretamente em uma linha só:
+        throw new ArithmeticException("Deu um erro :("); // pode enviar uma mensagem por parâmetro para o construtor da exceção
+        
+//        ArithmeticException exception = new ArithmeticException(); // instanciando uma ArithmeticException
+//        throw exception; // lançando uma exceção     
     }
 }
