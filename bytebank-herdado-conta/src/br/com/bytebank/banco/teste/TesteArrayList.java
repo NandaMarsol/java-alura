@@ -8,41 +8,45 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 public class TesteArrayList {
 
 	public static void main(String[] args) {
-		
-		ArrayList lista = new ArrayList();
 
-        Conta cc = new ContaCorrente(22, 11);
-        lista.add(cc);
+		// Generics
+		ArrayList<Conta> lista = new ArrayList<Conta>();
 
-        Conta cc2 = new ContaCorrente(22, 22);
-        lista.add(cc2);
+		Conta cc = new ContaCorrente(22, 11);
+		lista.add(cc);
 
-        System.out.println("Tamanho: " + lista.size());
+		Conta cc2 = new ContaCorrente(22, 22);
+		lista.add(cc2);
 
-        Conta ref = (Conta) lista.get(0);
-        System.out.println(ref.getNumero());
+		System.out.println("Tamanho: " + lista.size());
 
-        lista.remove(0);
-        System.out.println("Tamanho: " + lista.size());
+		Conta ref = lista.get(0);
+		System.out.println(ref.getNumero());
 
-        Conta cc3 = new ContaCorrente(33, 311);
-        lista.add(cc3);
+		lista.remove(0);
+		System.out.println("Tamanho: " + lista.size());
 
-        Conta cc4 = new ContaCorrente(33, 322);
-        lista.add(cc4);
+		Conta cc3 = new ContaCorrente(33, 311);
+		lista.add(cc3);
 
-        for(int i = 0; i < lista.size(); i++) {
-            Object oRef = lista.get(i);
-            System.out.println(oRef);
-        }
+		Conta cc4 = new ContaCorrente(33, 322);
+		lista.add(cc4);
 
-        System.out.println("----------");
+		for (int i = 0; i < lista.size(); i++) {
+			Object oRef = lista.get(i);
+			System.out.println(oRef);
+		}
 
-        for(Object oRef : lista) {
-            System.out.println(oRef);
-        }
+		System.out.println("----------");
 
+		for (Conta oRef : lista) {
+			System.out.println(oRef);
+		}
 
 	}
 
 }
+
+// uma lista guarda referencias
+// os Generics parametrizam classes
+// no caso da ArrayList podemos definir o tipo dos elementos através de Generics

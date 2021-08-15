@@ -81,5 +81,20 @@ public abstract class Conta {
     public String toString() {
         return "Numero: " + this.numero + ", Agencia: " + this.agencia;
     }
+    
+    // funcionalidade que verificará se uma conta é igual a outra
+    @Override
+//    public boolean ehIgual(Conta outra){
+      public boolean equals(Object ref) { // sobreescrevendo o método equals
+    	Conta outra = (Conta) ref;
+    	
+        if(this.agencia != outra.agencia){
+            return false;
+        }
+        if(this.numero != outra.numero){
+            return false;
+        }
+        return true;
+    }
 
 }
