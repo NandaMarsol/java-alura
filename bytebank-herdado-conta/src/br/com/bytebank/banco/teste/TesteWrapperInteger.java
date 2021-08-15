@@ -32,6 +32,7 @@ public class TesteWrapperInteger {
         System.out.println(iParseado1); //42
         System.out.println(iParseado2); //44
         
+        // verificando as constantes da classe Integer
         System.out.println(Integer.MAX_VALUE); // 2^31 - 1
         System.out.println(Integer.MIN_VALUE); //-2^31
 
@@ -41,3 +42,10 @@ public class TesteWrapperInteger {
 	}
 
 }
+
+// para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor
+// a criação do objeto Wrapper é chamada de autoboxing
+// a retirada do valor primitivo do objeto Wrapper é chamada de unboxing
+// autoboxing e unboxing acontecem automaticamente
+// as classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing
+// todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
