@@ -1,8 +1,10 @@
 package br.com.alura;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 // classe que representa um Curso
 // esse curso terá um punhado de aulas que representaremos através de uma lista de Aula
@@ -11,6 +13,7 @@ public class Curso {
 	private String nome;
 	private String instrutor;
 	private List<Aula> aulas = new LinkedList<Aula>();
+	private Set<Aluno> alunos = new HashSet<>();
 	
 	// criando construtor apenas com nome e instrutor
 	public Curso(String nome, String instrutor) {
@@ -49,6 +52,14 @@ public class Curso {
 	public String toString() {
 		return "[Curso: " + this.getNome() + " tempo total: " + this.getTempoTotal() + ", aulas: [" + this.aulas +" ]";
 	}
-
-
+	
+	//  método para matricular um aluno no curso
+	public void matricula(Aluno aluno){
+	    this.alunos.add(aluno);
+	}
+	
+	// método que devolve o Set mas de maneira não modificável
+	public Set<Aluno> getAlunos() {
+	    return Collections.unmodifiableSet(alunos);
+	}
 }
