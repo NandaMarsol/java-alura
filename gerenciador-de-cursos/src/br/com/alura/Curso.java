@@ -62,4 +62,9 @@ public class Curso {
 	public Set<Aluno> getAlunos() {
 	    return Collections.unmodifiableSet(alunos);
 	}
+	
+	// método recebe um aluno e verifica se o mesmo já está matriculado no Curso
+	public boolean estaMatriculado(Aluno aluno) {
+	    return this.alunos.contains(aluno);
+	}
 }

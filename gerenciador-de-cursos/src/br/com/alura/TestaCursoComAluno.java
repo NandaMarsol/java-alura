@@ -19,10 +19,25 @@ public class TestaCursoComAluno {
         javaColecoes.matricula(a2);
         javaColecoes.matricula(a3);
         
+        System.out.println("Todos os alunos matriculados: ");
         // iterando as matriculas com as expressões lambdas do Java 8
         javaColecoes.getAlunos().forEach(aluno -> {
             System.out.println(aluno);
         });
+        
+        System.out.println("O Aluno(a) " +a1+ "está matriculado(a)?");
+        System.out.println(javaColecoes.estaMatriculado(a1));
+        
+        
+        Aluno luna = new Aluno("Luna Marsol", 34672);
+        System.out.println("E essa Luna, está matriculada?");
+        System.out.println(javaColecoes.estaMatriculado(luna));
+        
+        System.out.println("A a1 é equals a Luna?");
+        System.out.println(a1.equals(luna));
+        
+        // obrigatoriamente é true:
+        System.out.println(a1.hashCode() == luna.hashCode());
 	}
 
 }
