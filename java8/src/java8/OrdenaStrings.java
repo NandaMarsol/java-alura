@@ -58,9 +58,12 @@ public class OrdenaStrings {
 		// 4) Como há apenas um único statement, podemos remover as chaves. Além disso, o return pode ser eliminado que o compilador vai inferir que deve ser retornado o valor que o próprio compare devolver:
 		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 		
-		// 5) Até podemos fugir do método compare, subtraindo os valores:
 		
+		// utilizando o Comparator.comparing()
+		palavras.sort(Comparator.comparing(s -> s.length()));
 		
+		// escrevendo o comparing com method reference
+		palavras.sort(Comparator.comparing(String::length));
 		
 		// foreach, para cada String p dentro de palavras, faça/ imprima...
 //		for (String p : palavras) {
