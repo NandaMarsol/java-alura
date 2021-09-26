@@ -33,6 +33,18 @@ public class TestaCurso {
 		
 		// transformando o Stream<Curso> em um Stream<String> contendo apenas os nomes dos cursos
 		Stream<String> nomes = cursos.stream().map(Curso::getNome);
+		
+		// cria um Stream<Integer> com a quantidade de alunos dos cursos e em seguida imprime todos eles
+		cursos.stream()
+		   .filter(c -> c.getAlunos() > 50)
+		   .map(c -> c.getAlunos())
+		   .forEach(x -> System.out.println("Quantidade de alunos de cada curso: " + x));
+		
+		// código acima usando a sintaxe de method reference no map e no foreach
+		cursos.stream()
+		   .filter(c -> c.getAlunos() > 50)
+		   .map(Curso::getAlunos)
+		   .forEach(System.out::println);
 	}
 
 }
