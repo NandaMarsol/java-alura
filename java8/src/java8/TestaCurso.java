@@ -3,6 +3,7 @@ package java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class TestaCurso {
 
@@ -29,6 +30,9 @@ public class TestaCurso {
 		cursos.stream()
 		   .filter(c -> c.getAlunos() > 50)
 		   .forEach(c -> System.out.println(c.getNome()));
+		
+		// transformando o Stream<Curso> em um Stream<String> contendo apenas os nomes dos cursos
+		Stream<String> nomes = cursos.stream().map(Curso::getNome);
 	}
 
 }
