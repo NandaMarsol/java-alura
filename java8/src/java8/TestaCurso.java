@@ -23,6 +23,12 @@ public class TestaCurso {
 		
 		// usando method reference
 		cursos.sort(Comparator.comparingInt(Curso::getAlunos));
+		
+		// Utilizando a API de Stream
+		// criando um filtro para todos os cursos que tenham mais de 50 alunos
+		cursos.stream()
+		   .filter(c -> c.getAlunos() > 50)
+		   .forEach(c -> System.out.println(c.getNome()));
 	}
 
 }
