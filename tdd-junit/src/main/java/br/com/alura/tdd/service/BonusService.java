@@ -9,7 +9,7 @@ public class BonusService {
 	public BigDecimal calcularBonus(Funcionario funcionario) {
 		BigDecimal valor = funcionario.getSalario().multiply(new BigDecimal("0.1"));
 		if (valor.compareTo(new BigDecimal("1000")) > 0) {
-			valor = BigDecimal.ZERO;
+			throw new IllegalArgumentException("Bônus não permitido para funcionário com salário maior que 10 mil.");
 		}
 		return valor;
 	}
